@@ -24,6 +24,13 @@ public class Ordenador {
     }
 
     /**
+     * Este metodo nos muestra la mac del ordenador 
+     */
+    public String getMac(){
+        return mac;
+    }
+
+    /**
      * Este metodo nos permite añadir dinero 
      */
     public void pagar (int añadirDinero){
@@ -55,8 +62,15 @@ public class Ordenador {
             dinero = 0;
         }
         else{
+            System.out.println("El ordenador"+ mac);
             System.out.println("Ha pagado usted" + horas +"horas");  
         }
+    }
+        public void imprimirInfo(){
+            System.out.println("MAC "+mac);
+            System.out.println("dinero añadido  "+ dinero+" euros");
+            System.out.println("El ordenador esta encendido " +estado);
+            System.out.println("El precio de la hora "+precioHora+" euros");
     }
 }
 
