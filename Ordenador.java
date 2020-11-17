@@ -7,13 +7,16 @@ public class Ordenador {
     private boolean estado;
     //precio que cuesta la hora
     private int precioHora;
+    //El numero de ordenador 
+    private int numeroOrdenador;
 
     /**
      * Aqui es donde creamos el ordenador 
      */
-    public Ordenador (boolean encendido,int coste){
+    public Ordenador (boolean encendido,int costeHora,int nOrdenador){
         estado = encendido;
-        precioHora = coste;
+        precioHora = costeHora;
+        numeroOrdenador = nOrdenador;
     }
 
     /**
@@ -28,6 +31,44 @@ public class Ordenador {
      */
     public String getMac(){
         return mac;
+    }
+
+    /**
+     * Este metodo nos indica el dinero que se ha añadido 
+     */
+    public int getdinero(){
+        return dinero;
+    }
+
+    /**
+     * Este metodo nos devuelve el estado del ordenador ON/OFF
+     */
+    public boolean getestado(){
+        return estado;
+    }
+
+    /**
+     * Este metodo nos devuelve a cuanto esta la hora
+     */
+    public int getprecioHora(){
+        return precioHora;
+    }
+
+    /**
+     * Este metodo muestra el numero de ordenador 
+     */
+    public int getnumeroOrdenador(){
+        return numeroOrdenador;
+    }
+
+    /**
+     * Este metodo nos da la informacion de los 3 atributos String int boolean.
+     */
+    
+    public String getdata(){
+        String dato ="";
+        dato = dato +"MAC "+ mac +" /num "+numeroOrdenador +" /ON "+ estado +" /Precio "+ precioHora +" /Euros " +dinero;
+        return dato;
     }
 
     /**
@@ -63,14 +104,13 @@ public class Ordenador {
         }
         else{
             System.out.println("El ordenador"+ mac);
+            System.out.println("con numero" + numeroOrdenador);
             System.out.println("Ha pagado usted" + horas +"horas");  
         }
     }
-        public void imprimirInfo(){
-            System.out.println("MAC "+mac);
-            System.out.println("dinero añadido  "+ dinero+" euros");
-            System.out.println("El ordenador esta encendido " +estado);
-            System.out.println("El precio de la hora "+precioHora+" euros");
+
+    public void imprimirInfo(){
+        System.out.println("MAC "+mac +"/numero"+numeroOrdenador +"/dinero añadido  "+ dinero+" euros /El ordenador esta encendido " +estado +"/El precio de la hora "+precioHora+" euros");
     }
 }
 
