@@ -15,13 +15,14 @@ public class Ordenador {
         estado = true;
         precioHora = costeHora;
         mac = serial;
+        dinero = 0;
     }
 
     /**
      * Este metodo nos permite fijar la mac
      */
-    public void setmac(String newmac){
-        this.mac = newmac;
+    public void setMac(String newMac){
+        this.mac = newMac;
     }
 
     /**
@@ -34,21 +35,21 @@ public class Ordenador {
     /**
      * Este metodo nos indica el dinero que se ha introducido
      */
-    public int getdinero(){
+    public int getDinero(){
         return dinero;
     }
 
     /**
      * Este metodo nos devuelve el estado del ordenador ON/OFF
      */
-    public boolean getestado(){
+    public boolean getEstado(){
         return estado;
     }
 
     /**
      * Este metodo nos devuelve a cuanto esta la hora
      */
-    public int getprecioHora(){
+    public int getPrecioHora(){
         return precioHora;
     }
 
@@ -56,7 +57,7 @@ public class Ordenador {
      * Este metodo nos da la informacion de lo que nos interesa
      */
     
-    public String getdata(){
+    public String getData(){
         String dato ="";
         dato = dato +"MAC "+ mac +" /ON "+ estado +" /Precio "+ precioHora +" /Euros " +dinero;
         return dato;
