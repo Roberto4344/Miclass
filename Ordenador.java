@@ -7,16 +7,14 @@ public class Ordenador {
     private boolean estado;
     //precio que cuesta la hora
     private int precioHora;
-    //El numero de ordenador 
-    private int numeroOrdenador;
 
     /**
      * Aqui es donde creamos el ordenador 
      */
-    public Ordenador (boolean encendido,int costeHora,int nOrdenador){
-        estado = encendido;
+    public Ordenador (int costeHora,String serial){
+        estado = true;
         precioHora = costeHora;
-        numeroOrdenador = nOrdenador;
+        mac = serial;
     }
 
     /**
@@ -34,7 +32,7 @@ public class Ordenador {
     }
 
     /**
-     * Este metodo nos indica el dinero que se ha añadido 
+     * Este metodo nos indica el dinero que se ha introducido
      */
     public int getdinero(){
         return dinero;
@@ -55,62 +53,40 @@ public class Ordenador {
     }
 
     /**
-     * Este metodo muestra el numero de ordenador 
-     */
-    public int getnumeroOrdenador(){
-        return numeroOrdenador;
-    }
-
-    /**
-     * Este metodo nos da la informacion de los 3 atributos String int boolean.
+     * Este metodo nos da la informacion de lo que nos interesa
      */
     
     public String getdata(){
         String dato ="";
-        dato = dato +"MAC "+ mac +" /num "+numeroOrdenador +" /ON "+ estado +" /Precio "+ precioHora +" /Euros " +dinero;
+        dato = dato +"MAC "+ mac +" /ON "+ estado +" /Precio "+ precioHora +" /Euros " +dinero;
         return dato;
     }
 
     /**
-     * Este metodo nos permite añadir dinero 
+     * Este metodo nos permite introducir dinero 
      */
-    public void pagar (int añadirDinero){
-        dinero = ( dinero + añadirDinero);
+    public void pagar (int intrDinero){
+        dinero = ( dinero + intrDinero);
     }
 
     /**
      * Este metodo permite encender y apagar el ordenador 
      */
-    public boolean encenderApagar(){
-        if(estado == false ){
+    public void encenderApagar(){
+        if(estado == true ){
             estado = true;
-            return estado;
         }
         else{
             estado = false;
-            return estado;
         }
     }
 
     /**
-     * Este metodo sirve para confirmar el pago 
+     * Con este metodo imprimimos la informacion
      */
-    public void confirmarPago (){
-        int horas;
-        horas = (precioHora / dinero );
-        if(estado == false){
-            System.out.println("El ordenador esta apagado le devolvemos"+ dinero + "euros");
-            dinero = 0;
-        }
-        else{
-            System.out.println("El ordenador"+ mac);
-            System.out.println("con numero" + numeroOrdenador);
-            System.out.println("Ha pagado usted" + horas +"horas");  
-        }
-    }
 
     public void imprimirInfo(){
-        System.out.println("MAC "+mac +"/numero"+numeroOrdenador +"/dinero añadido  "+ dinero+" euros /El ordenador esta encendido " +estado +"/El precio de la hora "+precioHora+" euros");
+        System.out.println("MAC "+mac +"/dinero añadido  "+ dinero+" euros /El ordenador esta encendido " +estado +"/El precio de la hora "+precioHora+" euros");
     }
 }
 
