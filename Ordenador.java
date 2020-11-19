@@ -75,10 +75,10 @@ public class Ordenador {
      */
     public void encenderApagar(){
         if(estado == true ){
-            estado = true;
+            estado = false;
         }
         else{
-            estado = false;
+            estado = true;
         }
     }
 
